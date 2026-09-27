@@ -1,0 +1,6 @@
+/* Medium cinematic pacing: four comfortable scroll lengths rather than a fast three. */
+.story { height: 440vh; }
+
+@media (max-width: 780px) {
+  .story { height: 300vh; }
+}
