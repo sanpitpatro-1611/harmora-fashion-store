@@ -1,6 +1,21 @@
 /* Medium cinematic pacing: four comfortable scroll lengths rather than a fast three. */
 .story { height: 440vh; }
 
+/* The overlay supplies the cinematic darkening; avoiding a full-screen filter
+   keeps each incoming story frame inexpensive to composite while scrolling. */
+.story-img {
+  filter: none;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.story-overlay {
+  background:
+    linear-gradient(rgba(0, 0, 0, .26), rgba(0, 0, 0, .26)),
+    linear-gradient(90deg, rgba(21, 13, 10, .52), transparent 58%),
+    linear-gradient(0deg, rgba(0, 0, 0, .32), transparent 35%);
+}
+
 @media (max-width: 780px) {
   .story { height: 300vh; }
 }
